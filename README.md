@@ -1,9 +1,4 @@
 # Claude Skills
-
-Repositorio de skills personalizadas para [Claude Code](https://claude.ai/code) — el CLI oficial de Anthropic.
-
-Cada skill es un comando slash (`/nombre`) que extiende las capacidades de Claude con flujos de trabajo especializados: auditorías, reportes, integraciones, y más.
-
 ---
 
 ## Instalacion
@@ -48,5 +43,3 @@ Audita un sitio web y determina si cumple los requisitos legales y técnicos par
 **Veredictos posibles:** `APTO ✅` / `APTO CON OBSERVACIONES ⚠️` / `NO APTO ❌`
 
 ---
-
-*Skills desarrolladas para uso con Claude Code · JAMO*
