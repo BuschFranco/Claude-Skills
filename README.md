@@ -69,6 +69,14 @@ Audita un sitio web en terminos de SEO, performance y accesibilidad. Genera un r
 
 **Dimensiones evaluadas:** SEO · Performance · Accesibilidad
 
+**Variable de entorno requerida:**
+
+```
+PAGESPEED_API_KEY=tu_clave_de_google_cloud
+```
+
+La skill usa la [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started) para obtener metricas de Core Web Vitals. Sin la clave la API devuelve errores 429. Obtené una clave gratuita en Google Cloud Console habilitando la API `pagespeedonline`. Defini la variable en tu entorno antes de correr la skill (`~/.bashrc`, `~/.zshrc` o equivalente en Windows).
+
 ---
 
 *Skills desarrolladas para uso con Claude Code · JAMO*
