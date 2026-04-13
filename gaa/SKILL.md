@@ -27,9 +27,22 @@ Usá WebFetch para obtener el contenido de la URL. El prompt debe pedir explíci
 - Información de contacto visible
 - Cualquier aviso legal, cookie banner o checkbox de consentimiento
 
-## Paso 2 — Verificar todos los links de la landing
+## Paso 2 — Verificar recursos clave del dominio y links de la landing
 
-### 2a — Obtener el listado completo de links
+### 2a — Verificar robots.txt y sitemap.xml
+
+A partir del dominio de la URL auditada, fetcheá en paralelo:
+
+- `[dominio]/robots.txt` — verificar si existe. Si existe, anotá si bloquea bots de Google Ads o si contiene directivas `Disallow` relevantes.
+- `[dominio]/sitemap.xml` — verificar si existe y si es accesible.
+
+Registrá para cada uno:
+- ¿Existe y responde correctamente? (200 / 404 / error)
+- Contenido relevante encontrado (directivas que afecten indexación o rastreo de anuncios)
+
+Incluí los resultados en la sección **Tracking y Analytics** del reporte bajo un bloque separado "Indexabilidad", o como observación en los problemas detectados si corresponde.
+
+### 2b — Obtener el listado completo de links de la landing
 
 Del contenido obtenido en el Paso 1, extraé **todos** los valores `href` encontrados.
 
@@ -45,7 +58,7 @@ Con el listado completo, clasificá cada link en una de estas categorías:
 
 Excluí de la verificación: links `#ancla`, `javascript:void`, `mailto:`, `tel:` y redes sociales conocidas (facebook.com, instagram.com, twitter.com, linkedin.com, youtube.com).
 
-### 2b — Fetchear todos los links relevantes
+### 2c — Fetchear todos los links relevantes
 
 Hacé WebFetch de **todos** los links de categoría Legal, CTA y Externo — en paralelo donde sea posible. **Usá exactamente el href encontrado, nunca construyas rutas.**
 
